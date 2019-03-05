@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}NewsItem{% endblock %}
+
+{% block body %}
+    <h1>NewsItem</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ news_item.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ news_item.title }}</td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ news_item.content }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('news_item_index') }}">back to list</a>
+
+    <a href="{{ path('news_item_edit', {'id': news_item.id}) }}">edit</a>
+
+    {{ include('news_item/_delete_form.html.twig') }}
+{% endblock %}
